@@ -10,16 +10,20 @@
       .name {
         color: #fffffe;
       }
-      .social-icons {
+      .social-icons a {
         color: #fffffe;
         text-decoration: none;
       }
       .item {
         background-color: #eebbc3;
+        display: flex;
+        align-items: center;
       }
       .item-link {
         color: #232946;
         text-decoration: none;
+        text-align: center;
+        flex-grow: 1;
       }
       .banner-image {
         width: 128px;
@@ -33,9 +37,16 @@
         object-fit: cover;
         border-radius: 48px;
       }
+      .items {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        max-width: 640px;
+      }
     </style>
   </head>
   <body>
+    <div class="items">
     <div class="banner">
      <img src="IMD_pic.jpg" alt="Isabel Dewhurst headshot" class="banner-image">
     </div>
@@ -58,6 +69,7 @@
     <div class="item">
       <img src="https://i0.wp.com/smittenkitchen.com/wp-content/uploads//2017/10/quick-pasta-e-ceci-pasta-with-chickpeas.jpg?fit=750%2C500&ssl=1" class="thumbnail">
       <a class="item-link" target="_blank" href="https://smittenkitchen.com/2017/10/quick-pasta-and-chickpeas-pasta-e-ceci/">Pasta e Ceci</a>
+    </div>
     </div>
   </body>
 </html>
