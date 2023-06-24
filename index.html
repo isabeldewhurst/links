@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html>
   <head>
     <style>
@@ -6,24 +6,52 @@
         padding-top: 40px;
         padding-bottom: 40px;
         background-color: #232946;
+        display: flex;
+        justify-content: center;
+        background-image: url('background_art2.jpg')|none|initial|inherit;
+        background-size: cover;
       }
       .name {
         color: #fffffe;
+        display: flex;
+        justify-content: center;
+        font-family: 'Raleway', sans-serif;
+        font-size: 44px;
+      }
+      .social-icons {
+        display: flex;
+        justify-content: space-around;
+        padding-left: 128px;
+        padding-right: 128px;
       }
       .social-icons a {
         color: #fffffe;
         text-decoration: none;
       }
       .item {
-        background-color: #af69ef;
+        /* background-color: #66ccff; */
         display: flex;
         align-items: center;
+        padding: 5px;
+        border-radius: 300px;
+        backdrop-filter: blur(10px);
+        box-shadow: var(--shadow-elevation-low);
+        transition: 0.5s;
+      }
+      .item:hover {
+        box-shadow: var(--shadow-elevation-high);
       }
       .item-link {
-        color: #232946;
+        color: #53604f;
         text-decoration: none;
         text-align: center;
         flex-grow: 1;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 20px;
+      }
+      .banner {
+        display: flex;
+        justify-content: center;
       }
       .banner-image {
         width: 128px;
@@ -42,44 +70,13 @@
         flex-direction: column;
         gap: 30px;
         max-width: 640px;
+        flex-grow: 1;
       }
+      
     </style>
-  </head>
-  <body>
-    <div class="items">
-    <div class="banner">
-     <img src="IMD_pic.jpg" alt="Isabel Dewhurst headshot" class="banner-image">
-    </div>
-    <div class="name">
-     Isabel Dewhurst
-    </div>
-    <div class="social-icons">
-      <a href="https://instagram.com/isabeld2080?igshid=OGQ5ZDc2ODk2ZA==" target="_blank">Instagram</a>
-      <a href="https://www.linkedin.com/in/isabel-dewhurst-b5530517b" target="_blank">LinkedIn</a>
-      <a href="https://www.github.com/isabeldewhurst" target="_blank">GitHub</a>
-    </div>
-    <div class="item">
-      <img src="https://i0.wp.com/smittenkitchen.com/wp-content/uploads//2017/10/chocolate-olive-oil-cake.jpg?fit=750%2C500&ssl=1" class="thumbnail">
-      <a class="item-link" target="_blank" href="https://smittenkitchen.com/2017/10/chocolate-olive-oil-cake/">Chocolate Olive Oil Cake</a>
-    </div>  
-    <div class="item">
-      <img src="https://d14iv1hjmfkv57.cloudfront.net/assets/recipes/tomato-crostini-with-whipped-feta/_1200x600_crop_center-center_82_line/Page-67-web-horizon.jpg" class="thumbnail">
-      <a class="item-link" target="_blank" href="https://barefootcontessa.com/recipes/tomato-crostini-with-whipped-feta">Tomato Crostini with Whipped Feta</a>
-    </div>
-    <div class="item">
-      <img src="https://i0.wp.com/smittenkitchen.com/wp-content/uploads//2017/10/quick-pasta-e-ceci-pasta-with-chickpeas.jpg?fit=750%2C500&ssl=1" class="thumbnail">
-      <a class="item-link" target="_blank" href="https://smittenkitchen.com/2017/10/quick-pasta-and-chickpeas-pasta-e-ceci/">Pasta e Ceci</a>
-    </div>
-    </div>
-  </body>
-
-  
-
-
-  <head>
     <meta charset="utf-8">
     <style>
-      .background--custom {
+      /* .background--custom {
         background-color: #FFFFFF;
         width: 100vw;
         height: 150vh;
@@ -95,29 +92,103 @@
         width: 100%;
         height: 60%;
         transform: rotate(-4deg) scale(2) translateY(0%);
+        --gradient-color-1: #23a4a3; 
+        --gradient-color-2: #9ffc05; 
+        --gradient-color-3: #4dfd8d;  
+        --gradient-color-4: #66ccff;
+        --gradient-speed: 0.000006;
+      } */
+      /* canvas#canvas {
+        z-index: -1;
+        position: absolute;
+        width: 100%;
+        height: 60%;
+        transform: rotate(-4deg) scale(2) translateY(0%);
         --gradient-color-1: #54a0d2; 
         --gradient-color-2: #8fed97; 
         --gradient-color-3: #ff3eed;  
         --gradient-color-4: #2c9aa6;
         --gradient-speed: 0.000006;
+      } */
+
+        :root {
+        --shadow-color: 106deg 10% 34%;
+        --shadow-elevation-low:
+          0.3px 0.5px 0.8px hsl(var(--shadow-color) / 0.17),
+          0.4px 0.9px 1.3px -0.6px hsl(var(--shadow-color) / 0.29),
+          1px 2px 2.9px -1.2px hsl(var(--shadow-color) / 0.4);
+        --shadow-elevation-medium:
+          0.3px 0.5px 0.8px hsl(var(--shadow-color) / 0.18),
+          1px 2px 2.9px -0.4px hsl(var(--shadow-color) / 0.27),
+          2.3px 4.5px 6.6px -0.8px hsl(var(--shadow-color) / 0.36),
+          5px 10px 14.7px -1.2px hsl(var(--shadow-color) / 0.45);
+        --shadow-elevation-high:
+          0.3px 0.5px 0.8px hsl(var(--shadow-color) / 0.17),
+          2px 4.1px 6px -0.2px hsl(var(--shadow-color) / 0.21),
+          3.7px 7.3px 10.7px -0.4px hsl(var(--shadow-color) / 0.25),
+          5.6px 11.2px 16.4px -0.5px hsl(var(--shadow-color) / 0.29),
+          8.3px 16.6px 24.4px -0.7px hsl(var(--shadow-color) / 0.34),
+          12.1px 24.2px 35.5px -0.9px hsl(var(--shadow-color) / 0.38),
+          17.5px 35.1px 51.5px -1.1px hsl(var(--shadow-color) / 0.42),
+          25px 50px 73.4px -1.2px hsl(var(--shadow-color) / 0.46);
       }
     </style>
+    <!-- Connect Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:300,400" rel="stylesheet">
   </head>
-  <body>
-    <div class="background--custom">
-      <canvas id="canvas" />
+  <body background="background_art2.jpg">
+    <div class="items">
+    <div class="banner">
+     <img src="IMD_pic.jpg" alt="Isabel Dewhurst headshot" class="banner-image">
     </div>
+    <div class="name">
+     Isabel Dewhurst
+    </div>
+    <div class="social-icons">
+      <a href="https://instagram.com/isabeld2080?igshid=OGQ5ZDc2ODk2ZA==" target="_blank">
+        <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/isabel-dewhurst-b5530517b" target="_blank">
+        <i class="fa-brands fa-linkedin" style="color: #ffffff;"></i>
+      </a>
+      <a href="https://www.github.com/isabeldewhurst" target="_blank">
+        <i class="fa-brands fa-github" style="color: #ffffff;"></i>
+      </a>
+    </div>
+    <div class="item">
+      <img src="nga_image.jpg" class="thumbnail">
+      <a class="item-link" target="_blank" href="https://www.nga.gov/">National Gallery of Art</a>
+    </div>  
+    <div class="item">
+      <img src="V&A_image.jpg" class="thumbnail">
+      <a class="item-link" target="_blank" href="https://www.vam.ac.uk/">Victoria & Albert Museum</a>
+    </div>
+    <div class="item">
+      <img src="npg_image.jpg" class="thumbnail">
+      <a class="item-link" target="_blank" href="https://npg.si.edu/home/national-portrait-gallery">National Portrait Gallery</a>
+    </div>
+    <div class="item">
+      <img src="uffizi_image.jpg" class="thumbnail">
+      <a class="item-link" target="_blank" href="https://www.uffizi.it/en/the-uffizi">Le Gallerie degli Uffizi</a>
+    </div>  
+    <div class="item">
+      <img src="lorangerie_image.jpg" class="thumbnail">
+      <a class="item-link" target="_blank" href="https://www.musee-orangerie.fr/en">Musée de l'Orangerie</a>
+    </div>
+    <div class="item">
+      <img src="AIC_image.jpg" class="thumbnail">
+      <a class="item-link" target="_blank" href="https://www.artic.edu/">Art Institute of Chicago</a>
+    </div>
+    </div>
+    <!-- <div class="background--custom">
+      <canvas id="canvas" />
+    </div> -->
     <script src="https://cdn.jsdelivr.net/gh/greentfrapp/pocoloco@minigl/minigl.js"></script>
     <script>
     var gradient = new Gradient();
     gradient.initGradient("#canvas");
     </script>
   </body>
-
-
-
-
-
-
 
 </html>
